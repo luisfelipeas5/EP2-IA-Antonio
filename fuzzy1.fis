@@ -1,0 +1,41 @@
+[System]
+Name='fuzzy1'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='bisector'
+
+[Input1]
+Name='termo1'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'gaussmf',[0.191 0.000724867724867739]
+MF2='mf2':'trimf',[0.323846560846561 0.472246560846561 0.643846560846561]
+MF3='mf3':'trimf',[0.861111111111111 0.882 1.29]
+
+[Input2]
+Name='termo2'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.365608465608466 0.0343915343915344 0.434391534391534]
+MF2='mf2':'gaussmf',[0.1699 0.5238]
+MF3='mf3':'trimf',[0.515343915343915 0.915343915343915 1.31534391534392]
+
+[Output1]
+Name='proximoTermo'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.3419 0.0582 0.4583]
+MF2='mf2':'trimf',[0.0816613756613757 0.535761375661376 0.885661375661376]
+MF3='mf3':'trimf',[0.6 1 1.4]
+
+[Rules]
+0 2, 1 (1) : 2
+1 0, 1 (1) : 2
+2 2, 3 (1) : 2
